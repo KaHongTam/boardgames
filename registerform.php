@@ -12,7 +12,7 @@
 
       </head>
     <body>
-    <!--registergorm -->
+    <!--registerform -->
         <div class="form-group">
             <form action="register.php" method="post">
                 <label for="email"></label>
