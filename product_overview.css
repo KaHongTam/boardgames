@@ -1,0 +1,74 @@
+.card {
+    background-color: #dac6ac;
+}
+
+.ribbon {
+    position: absolute;
+    left: -5px; top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px; height: 75px;
+    text-align: right;
+  }
+  .ribbon span {
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    line-height: 20px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    width: 100px;
+    display: block;
+    background: #79A70A;
+    background: linear-gradient(#EFA747 0%, #8c7547 100%);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 19px; left: -21px;
+  }
+  .ribbon span::before {
+    content: "";
+    position: absolute; left: 0px; top: 100%;
+    z-index: -1;
+    border-left: 3px solid #8c7547;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid #8c7547;
+  }
+  .ribbon span::after {
+    content: "";
+    position: absolute; right: 0px; top: 100%;
+    z-index: -1;
+    border-left: 3px solid transparent;
+    border-right: 3px solid #8c7547;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid #8c7547;
+  }
+
+.bigSquare {
+    margin-left: 5%;
+    margin-top: 20%;
+}
+
+.card-text p {
+    overflow: hidden;
+}
+
+#oval {
+    width: 100px; 
+    height: 50px; 
+    background: #efa747; 
+    border-radius: 50px / 25px; 
+}
+
+#oval:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+footer {
+    background-color: #515b51;
+}

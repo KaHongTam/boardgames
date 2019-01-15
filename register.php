@@ -67,6 +67,8 @@ if(isset($_POST['register'])){
  
     //Execute the statement and insert the new account.
     $result = $stmt->execute();
+
+    header('Refresh: 1 ; url=register_form.php');
     
     //If the signup process is successful.
     if($result){
