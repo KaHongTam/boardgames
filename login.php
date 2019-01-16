@@ -27,7 +27,7 @@ if(isset($_POST['login'])){
     $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
 
     //Retrieve the user account information for the given user email.
-    $sql = "SELECT user_id, user_email, user_password FROM users WHERE user_email = :user_email";
+    $sql = "SELECT user_id, user_email, user_password, `role` FROM users WHERE user_email = :user_email";
     $stmt = $pdo->prepare($sql);
  
     
@@ -60,9 +60,9 @@ if(isset($_POST['login'])){
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['logged_in'] = time();
             $_SESSION['user'] = $user['user_email'];
-            // $_SESSION['role'] = $user['role'];
+            $_SESSION['role'] = $user['role'];
             //Redirect to our protected page, which we called home.php
-            header('Refresh: 1 ; url=user.home.php');
+            header('Refresh: 1 ; add_product_form.php');
             exit;
             
         } else{

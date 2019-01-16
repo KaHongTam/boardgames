@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['role'])&& $_SESSION['role']=='admin'){
+        
+?>
+
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -18,47 +24,48 @@
                     <label for="product_desc">Beschrijving</label>
                     <input type="text" class="form-control" placeholder="Beschrijving" name="product_desc" required>
 
-                    <label for="product_desc">afbeelding</label>
-                    <input type="text" class="form-control" placeholder="afbeelding" name="product_desc" required>
+                    <label for="product_desc">Afbeelding</label>
+                    <input type="text" class="form-control" placeholder="Afbeelding" name="product_desc" required>
 
-                    <label for="product_min_players">minimaal aantal spelers</label>
-                    <input type="text" class="form-control" placeholder="minimaal aantal spelers" name="product_min_players" required>
+                    <label for="product_min_players">Minimaal aantal spelers</label>
+                    <input type="text" class="form-control" placeholder="Minimaal aantal spelers" name="product_min_players" required>
 
-                    <label for="product_max_players">maximaal aantal spelers</label>
-                    <input type="text" class="form-control" placeholder="maximaal aantal spelers" name="product_max_players" required>
+                    <label for="product_max_players">Maximaal aantal spelers</label>
+                    <input type="text" class="form-control" placeholder="Maximaal aantal spelers" name="product_max_players" required>
 
-                    <label for="product_coop">co-op</label>
+                    <label for="product_coop">Co-op</label>
                     <select class="form-control" name="product-coop">
                         <option value="together">Samen spelen</option>
                         <option value="against">Tegen elkaar</option>
                         <option value="both">Beide</option>
                     </select> 
 
-                    <label for="product_category">categorie</label>
-                    <input type="text" class="form-control" placeholder="categorie" name="product_category" required>
+                    <label for="product_category">Categorie</label>
+                    <input type="text" class="form-control" placeholder="Categorie" name="product_category" required>
 
-                    <label for="product_difficulty">moeilijkheidsgraad</label>
-                    <input type="text" class="form-control" placeholder="moeilijkheidsgraad" name="product_difficulty" required>
+                    <label for="product_difficulty">Moeilijkheidsgraad</label>
+                    <input type="text" class="form-control" placeholder="Moeilijkheidsgraad" name="product_difficulty" required>
 
-                    <label for="product_playtime">speelduur</label>
-                    <input type="text" class="form-control" placeholder="speeltijd" name="product_playtime" required>
+                    <label for="product_playtime">Speelduur</label>
+                    <input type="text" class="form-control" placeholder="Speeltijd" name="product_playtime" required>
 
+                    <label class="radio" for="product_travelversion">Travel versie</label>
                     <div class="radio">
-                    <label class="radio" for="product_travelversion">travel versie</label>
                     <input type="radio" value="1" name="product_travelversion"> Ja
+                    </div>
+                    <div class="radio">
                     <input  type="radio" value="0" name="product_travelversion"> Nee
                     </div>
-
-                    
-                        <label for="product_education">educatief</label>
-                        <div class="radio">
+                   
+                    <label for="product_education">Educatief</label>
+                    <div class="radio">
                         <input  type="radio" value="1" name="product_education"> Ja 
-                        </div>
-                        <div class="radio">
+                    </div>
+                    <div class="radio">
                         <input type="radio" value="0" name="product_education"> Nee
                     </div>    
 
-                    <button type="submit">Toevoegen</button>
+                    <button type="submit" class="btn btn-dark">Toevoegen</button>
                     
                 </form>
             </div>
@@ -66,3 +73,9 @@
     </div>
 </body>
 </html>
+<?php
+    }else {
+        header('location: access_denied.php');
+    }
+
+?>
